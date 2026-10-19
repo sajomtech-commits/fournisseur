@@ -24,12 +24,22 @@
       .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
   }
 
+  /*
+   * Devise affichee. L'API du fournisseur renvoie `cSymbol: "$"`, mais le
+   * symbole peut ne pas correspondre a la devise reelle de facturation.
+   * On peut donc la forcer ici sans toucher au reste du code.
+   *   CURRENCY = ""      -> aucun symbole (valeur brute, le plus sur)
+   *   CURRENCY = "$"     -> dollars
+   *   CURRENCY = "¥"     -> yens / yuans
+   *   CURRENCY = "CNY "  -> code devise
+   */
+  var CURRENCY = "";
+
   function price(p) {
     if (p.price == null || p.price === 0) return "—";
-    var sym = p.currency || "$";
-    // La devise renvoyée par l'API est déjà un symbole ("$") : on ne le double pas.
     var val = Number(p.price).toLocaleString("fr-FR");
-    return /^[A-Za-z]{2,3}$/.test(sym) ? sym + " " + val : sym + val;
+    if (!CURRENCY) return val;             // valeur seule : jamais trompeur
+    return CURRENCY + val;
   }
 
   function shortDate(iso) {
@@ -235,23 +245,23 @@
     $("empty").hidden = list.length > 0;
     $("more-wrap").hidden = list.length <= state.shown;
 
-    // Fondu des images au chargement
+    // Images : elles sont visibles par defaut (aucune classe requise).
+    // On ne fait qu'ajouter un remplacement si le chargement echoue.
     Array.prototype.forEach.call(grid.querySelectorAll(".thumb img"), function (im) {
-      if (im.complete && im.naturalWidth) im.classList.add("on");
-      else {
-        im.addEventListener("load", function () { im.classList.add("on"); });
-        im.addEventListener("error", function () {
-          im.style.display = "none";
-          var t = im.parentNode;
-          if (t && !t.querySelector(".noimg")) {
-            var s = document.createElement("div");
-            s.className = "noimg";
-            s.style.cssText = "display:grid;place-items:center;height:100%;color:var(--ink-3);font-size:26px";
-            s.textContent = "🖼️";
-            t.appendChild(s);
-          }
-        });
+      function fail() {
+        im.style.display = "none";
+        var t = im.parentNode;
+        if (t && !t.querySelector(".noimg")) {
+          var s = document.createElement("div");
+          s.className = "noimg";
+          s.style.cssText =
+            "display:grid;place-items:center;height:100%;color:var(--ink-3);font-size:26px";
+          s.textContent = "🖼️";
+          t.appendChild(s);
+        }
       }
+      if (im.complete && im.naturalWidth === 0) { fail(); return; }
+      im.addEventListener("error", fail);
     });
   }
 

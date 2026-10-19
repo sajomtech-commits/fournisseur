@@ -133,11 +133,14 @@ body {
 .thumb {
   position: relative; aspect-ratio: 4/5; background: var(--bg); overflow: hidden;
 }
+/*
+ * Les vignettes sont visibles des le depart, sans dependre du script.
+ * (Un fondu d'apparition avait ete tente : si le script ne s'executait pas
+ * ou si l'image etait servie depuis le cache, elle restait invisible.)
+ */
 .thumb img {
   width: 100%; height: 100%; object-fit: cover; display: block;
-  opacity: 0; transition: opacity .3s;
 }
-.thumb img.on { opacity: 1; }
 
 .badge {
   position: absolute; top: 9px; left: 9px; z-index: 2;
