@@ -362,9 +362,13 @@
       t.classList.add("on");
     });
 
-    // Fermeture
+    // Fermeture : on remonte au plus proche porteur de data-close.
+    // e.target peut etre un noeud de texte (le glyphe ✕), qui n'a pas
+    // hasAttribute() — d'ou l'echec silencieux de la fermeture auparavant.
     $("modal").addEventListener("click", function (e) {
-      if (e.target.hasAttribute("data-close")) closeModal();
+      var t = e.target;
+      if (t && t.nodeType === 3) t = t.parentNode;          // noeud texte -> element
+      if (t && t.closest && t.closest("[data-close]")) closeModal();
     });
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && !$("modal").hidden) closeModal();
