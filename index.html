@@ -58,24 +58,11 @@
   <p class="note">Les images sont affichées directement depuis le serveur du fournisseur. Les prix sont indicatifs et en dollars.</p>
 </footer>
 
-<!-- Fiche produit -->
-<div id="modal" class="modal" hidden>
-  <div class="modal-bg" data-close></div>
-  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="m-title">
-    <button class="modal-x" data-close aria-label="Fermer">✕</button>
-    <div class="modal-body">
-      <div class="gallery">
-        <div class="g-main"><img id="m-img" alt=""></div>
-        <div class="g-thumbs" id="m-thumbs"></div>
-      </div>
-      <div class="m-info">
-        <h2 id="m-title"></h2>
-        <p class="m-price" id="m-price"></p>
-        <dl class="m-facts" id="m-facts"></dl>
-      </div>
-    </div>
-  </div>
-</div>
+<!--
+  La fiche produit n'est PAS dans le HTML : elle est construite par app.js
+  uniquement au clic sur un article. Ainsi, aucun ecran ne peut s'afficher
+  au premier plan tant que rien n'a ete clique.
+-->
 
 <script src="assets/app.js"></script>
 </body>

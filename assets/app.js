@@ -257,39 +257,84 @@
 
   /* ---------- Fiche produit ---------- */
 
+  /*
+   * La fiche est entierement construite ici, au moment du clic, puis retiree
+   * du DOM a la fermeture. Elle n'existe donc jamais dans la page au
+   * chargement : aucun ecran ne peut s'afficher au premier plan tout seul.
+   */
   function openModal(id) {
     var p = null;
     for (var i = 0; i < state.all.length; i++) if (state.all[i].id === id) { p = state.all[i]; break; }
     if (!p) return;
 
+    closeModal(); // securite : on retire toute fiche deja presente
+
     var imgs = (p.images && p.images.length) ? p.images : (p.cover ? [p.cover] : []);
 
-    $("m-title").textContent = p.name || "Sans nom";
-    $("m-price").textContent = price(p);
+    var wrap = document.createElement("div");
+    wrap.id = "modal";
+    wrap.className = "modal";
+    wrap.innerHTML =
+      '<div class="modal-bg" data-close></div>' +
+      '<div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="m-title">' +
+        '<button class="modal-x" data-close aria-label="Fermer">✕</button>' +
+        '<div class="modal-body">' +
+          '<div class="gallery">' +
+            '<div class="g-main"><img id="m-img" alt=""></div>' +
+            '<div class="g-thumbs" id="m-thumbs"></div>' +
+          '</div>' +
+          '<div class="m-info">' +
+            '<h2 id="m-title"></h2>' +
+            '<p class="m-price" id="m-price"></p>' +
+            '<dl class="m-facts" id="m-facts"></dl>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
 
-    var main = $("m-img");
+    // Contenu
+    wrap.querySelector("#m-title").textContent = p.name || "Sans nom";
+    wrap.querySelector("#m-price").textContent = price(p);
+
+    var main = wrap.querySelector("#m-img");
     main.src = imgs[0] || "";
     main.alt = p.name || "";
 
-    $("m-thumbs").innerHTML = imgs.map(function (src, i) {
-      return '<img src="' + esc(src) + '" data-i="' + i + '" class="' + (i === 0 ? "on" : "") +
+    wrap.querySelector("#m-thumbs").innerHTML = imgs.map(function (src, i) {
+      return '<img src="' + esc(src) + '" class="' + (i === 0 ? "on" : "") +
         '" alt="Photo ' + (i + 1) + '" loading="lazy">';
     }).join("");
 
-    $("m-facts").innerHTML =
+    wrap.querySelector("#m-facts").innerHTML =
       "<dt>Catégorie</dt><dd>" + esc(p._cat) + "</dd>" +
       "<dt>Marque</dt><dd>" + esc(p._brand) + "</dd>" +
       "<dt>Publié le</dt><dd>" + esc(fullDate(p.createdAt)) + "</dd>" +
       "<dt>Photos</dt><dd>" + esc(p.imageCount || imgs.length) + "</dd>" +
       "<dt>Référence</dt><dd>#" + esc(p.id) + "</dd>";
 
-    $("modal").hidden = false;
-    document.body.style.overflow = "hidden";
-    $("modal").querySelector(".modal-x").focus();
+    document.body.appendChild(wrap);
+
+    // Fermeture : delegation sur le conteneur (le clic peut viser le glyphe)
+    wrap.addEventListener("click", function (e) {
+      var t = e.target;
+      if (t && t.nodeType === 3) t = t.parentNode;
+      if (t && t.closest && t.closest("[data-close]")) closeModal();
+    });
+
+    // Galerie
+    wrap.querySelector("#m-thumbs").addEventListener("click", function (e) {
+      var t = e.target;
+      if (!t || t.tagName !== "IMG") return;
+      main.src = t.src;
+      wrap.querySelectorAll("#m-thumbs img").forEach(function (x) { x.classList.remove("on"); });
+      t.classList.add("on");
+    });
+
+    wrap.querySelector(".modal-x").focus();
   }
 
   function closeModal() {
-    $("modal").hidden = true;
+    var m = document.getElementById("modal");
+    if (m && m.parentNode) m.parentNode.removeChild(m);
     document.body.style.overflow = "";
   }
 
@@ -353,25 +398,12 @@
       if (c) { e.preventDefault(); openModal(Number(c.dataset.id)); }
     });
 
-    // Galerie
-    $("m-thumbs").addEventListener("click", function (e) {
-      var t = e.target.closest("img");
-      if (!t) return;
-      $("m-img").src = t.src;
-      $("m-thumbs").querySelectorAll("img").forEach(function (x) { x.classList.remove("on"); });
-      t.classList.add("on");
-    });
+    // Les gestionnaires de la galerie et de la fermeture sont attaches
+    // directement a la fiche au moment de sa creation (voir openModal).
 
-    // Fermeture : on remonte au plus proche porteur de data-close.
-    // e.target peut etre un noeud de texte (le glyphe ✕), qui n'a pas
-    // hasAttribute() — d'ou l'echec silencieux de la fermeture auparavant.
-    $("modal").addEventListener("click", function (e) {
-      var t = e.target;
-      if (t && t.nodeType === 3) t = t.parentNode;          // noeud texte -> element
-      if (t && t.closest && t.closest("[data-close]")) closeModal();
-    });
+    // Touche Echap : ferme la fiche si elle est ouverte
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && !$("modal").hidden) closeModal();
+      if (e.key === "Escape") closeModal();
     });
   }
 })();
