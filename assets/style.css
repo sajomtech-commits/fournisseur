@@ -29,6 +29,13 @@ html[data-theme="dark"] {
 
 * { box-sizing: border-box; }
 
+/*
+ * L'attribut HTML `hidden` doit toujours l'emporter. Sans cette regle, toute
+ * declaration `display` (grid, flex…) l'ecrase : la fiche produit s'affichait
+ * par-dessus le site des le chargement et bloquait tout acces.
+ */
+[hidden] { display: none !important; }
+
 body {
   margin: 0;
   background: var(--bg);
