@@ -3,7 +3,6 @@
   "use strict";
 
   var PAGE = 48;          // articles ajoutés par « Afficher plus »
-  var SUPPLIER = "https://www.jetlifefashion.com";
 
   var state = {
     all: [],
@@ -283,8 +282,6 @@
       "<dt>Publié le</dt><dd>" + esc(fullDate(p.createdAt)) + "</dd>" +
       "<dt>Photos</dt><dd>" + esc(p.imageCount || imgs.length) + "</dd>" +
       "<dt>Référence</dt><dd>#" + esc(p.id) + "</dd>";
-
-    $("m-link").href = SUPPLIER + "/#/album/detail?id=" + encodeURIComponent(p.id);
 
     $("modal").hidden = false;
     document.body.style.overflow = "hidden";

@@ -207,13 +207,6 @@ body {
 .m-facts { margin: 0 0 22px; display: grid; grid-template-columns: auto 1fr; gap: 9px 18px; font-size: 14px; }
 .m-facts dt { color: var(--ink-3); }
 .m-facts dd { margin: 0; font-weight: 500; }
-.cta {
-  margin-top: auto; display: block; text-align: center; text-decoration: none;
-  padding: 13px; border-radius: 11px; font-weight: 600;
-  background: var(--accent); color: #fff;
-}
-.cta:hover { filter: brightness(1.08); }
-
 /* ---------- Responsive ---------- */
 @media (max-width: 760px) {
   .modal-body { grid-template-columns: 1fr; }
