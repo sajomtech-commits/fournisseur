@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fournisseur — Nouveautés</title>
+<meta name="description" content="Nouveautés et sélection du fournisseur JetLife Fashion (0832CLUB), mises à jour chaque jour.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-in">
+    <div class="brand">
+      <span class="logo">📦</span>
+      <div>
+        <h1>Fournisseur</h1>
+        <p class="sub">JetLife Fashion &middot; 0832CLUB</p>
+      </div>
+    </div>
+    <div class="top-actions">
+      <input id="q" type="search" placeholder="Rechercher un article…" autocomplete="off" aria-label="Rechercher">
+      <button id="theme" class="icon-btn" title="Changer de thème" aria-label="Changer de thème">🌙</button>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs wrap" role="tablist">
+  <button class="tab is-on" data-view="recent" role="tab">🆕 Nouveautés <span class="pill" id="c-recent"></span></button>
+  <button class="tab" data-view="top" role="tab">⭐ Top produits <span class="pill" id="c-top"></span></button>
+  <button class="tab" data-view="all" role="tab">📚 Tout <span class="pill" id="c-all"></span></button>
+</nav>
+
+<main class="wrap">
+  <div class="filters">
+    <select id="f-cat" aria-label="Filtrer par catégorie"><option value="">Toutes les catégories</option></select>
+    <select id="f-brand" aria-label="Filtrer par marque"><option value="">Toutes les marques</option></select>
+    <button id="reset" class="ghost">Réinitialiser</button>
+  </div>
+
+  <p class="count" id="count"></p>
+  <div id="grid" class="grid"></div>
+
+  <div id="empty" class="empty" hidden>
+    <p class="emoji">🔍</p>
+    <p>Aucun article ne correspond à cette recherche.</p>
+    <button id="clear" class="ghost">Effacer les filtres</button>
+  </div>
+
+  <div id="more-wrap" class="more-wrap" hidden>
+    <button id="more" class="ghost">Afficher plus</button>
+  </div>
+</main>
+
+<footer class="foot wrap">
+  <p id="meta">Chargement…</p>
+  <p class="note">Les images sont affichées directement depuis le serveur du fournisseur. Les prix sont indicatifs et en dollars.</p>
+</footer>
+
+<!-- Fiche produit -->
+<div id="modal" class="modal" hidden>
+  <div class="modal-bg" data-close></div>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="m-title">
+    <button class="modal-x" data-close aria-label="Fermer">✕</button>
+    <div class="modal-body">
+      <div class="gallery">
+        <div class="g-main"><img id="m-img" alt=""></div>
+        <div class="g-thumbs" id="m-thumbs"></div>
+      </div>
+      <div class="m-info">
+        <h2 id="m-title"></h2>
+        <p class="m-price" id="m-price"></p>
+        <dl class="m-facts" id="m-facts"></dl>
+        <a id="m-link" class="cta" href="#" target="_blank" rel="noopener">Voir chez le fournisseur ↗</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

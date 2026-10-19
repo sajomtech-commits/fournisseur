@@ -1,0 +1,17 @@
+# Données locales / temporaires
+node_modules/
+*.log
+
+# Secrets — ne jamais committer
+.env
+.env.*
+secrets/
+*api*.md
+API.md
+token*.md
+Token*.md
+.harness-github.json
+
+# Systèmes
+.DS_Store
+Thumbs.db
