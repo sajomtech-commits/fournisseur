@@ -1,6 +1,6 @@
 {
  "meta": {
-  "updatedAt": "2026-10-28T11:46:37.376Z",
+  "updatedAt": "2026-10-29T11:54:17.759Z",
   "supplier": "JetLife Fashion — 0832CLUB",
   "source": "https://www.jetlifefashion.com",
   "total": 240,
@@ -486,19 +486,6 @@
    "cover": "https://www.jetlifefashion.com/uploads/d850e5b8/04da28dc_thumb.jpg",
    "images": [],
    "createdAt": "2026-04-06T08:53:37Z",
-   "top": true,
-   "isNew": false,
-   "recent": false
-  },
-  {
-   "id": 54048,
-   "name": "Nike WINDRUNNER Tech JACKET PANT",
-   "price": 238,
-   "currency": "$",
-   "imageCount": 31,
-   "cover": "https://www.jetlifefashion.com/uploads/69db74e5/33686963_thumb.jpg",
-   "images": [],
-   "createdAt": "2026-01-19T17:28:29Z",
    "top": true,
    "isNew": false,
    "recent": false
@@ -1024,19 +1011,6 @@
    "recent": false
   },
   {
-   "id": 43762,
-   "name": "RALPH LAUREN T-SHIRT",
-   "price": 88,
-   "currency": "$",
-   "imageCount": 27,
-   "cover": "https://www.jetlifefashion.com/uploads/cefa132e/4143c8cb_thumb.jpeg",
-   "images": [],
-   "createdAt": "2025-03-10T09:54:04Z",
-   "top": true,
-   "isNew": false,
-   "recent": false
-  },
-  {
    "id": 43700,
    "name": "RALPH LAUREN HOODIE",
    "price": 168,
@@ -1401,6 +1375,32 @@
    "recent": false
   },
   {
+   "id": 25996,
+   "name": "Eric Emanuel SHORT",
+   "price": 68,
+   "currency": "$",
+   "imageCount": 38,
+   "cover": "https://www.jetlifefashion.com/uploads/86d16b95/49fdfbc6_thumb.jpg",
+   "images": [],
+   "createdAt": "2023-11-09T10:39:16Z",
+   "top": true,
+   "isNew": false,
+   "recent": false
+  },
+  {
+   "id": 25995,
+   "name": "PALM ANGLE  PANT",
+   "price": 115,
+   "currency": "$",
+   "imageCount": 58,
+   "cover": "https://www.jetlifefashion.com/uploads/ca5883f9/26d96913_thumb.jpg",
+   "images": [],
+   "createdAt": "2023-11-09T10:36:55Z",
+   "top": true,
+   "isNew": false,
+   "recent": false
+  },
+  {
    "id": 13579,
    "name": "NIKE TECH FLEECE SHORT",
    "price": 85,
@@ -1462,19 +1462,6 @@
    "images": [],
    "createdAt": "2022-10-26T06:45:36Z",
    "top": true,
-   "isNew": false,
-   "recent": false
-  },
-  {
-   "id": 3273,
-   "name": "STUSSY  T-SHIRT",
-   "price": 68,
-   "currency": "$",
-   "imageCount": 14,
-   "cover": "https://www.jetlifefashion.com/uploads/f0c8a356/2a883381_thumb.jpeg",
-   "images": [],
-   "createdAt": "2022-08-01T08:30:09Z",
-   "top": false,
    "isNew": false,
    "recent": false
   },
@@ -3281,6 +3268,19 @@
    "cover": "https://www.jetlifefashion.com/uploads/579445f0/d9bbcc80_thumb.jpg",
    "images": [],
    "createdAt": "2022-07-31T11:56:00Z",
+   "top": false,
+   "isNew": false,
+   "recent": false
+  },
+  {
+   "id": 2947,
+   "name": "STUSSY T-SHIRT",
+   "price": 68,
+   "currency": "$",
+   "imageCount": 27,
+   "cover": "https://www.jetlifefashion.com/uploads/579445f0/efea8eb9_thumb.jpg",
+   "images": [],
+   "createdAt": "2022-07-31T11:53:56Z",
    "top": false,
    "isNew": false,
    "recent": false
