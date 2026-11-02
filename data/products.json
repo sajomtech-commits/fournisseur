@@ -1,6 +1,6 @@
 {
  "meta": {
-  "updatedAt": "2026-11-01T12:13:03.841Z",
+  "updatedAt": "2026-11-02T14:02:15.668Z",
   "supplier": "JetLife Fashion — 0832CLUB",
   "source": "https://www.jetlifefashion.com",
   "total": 240,
@@ -1462,32 +1462,6 @@
    "images": [],
    "createdAt": "2022-10-26T06:45:36Z",
    "top": true,
-   "isNew": false,
-   "recent": false
-  },
-  {
-   "id": 3251,
-   "name": "CARHARTT T-SHIRT",
-   "price": 88,
-   "currency": "$",
-   "imageCount": 30,
-   "cover": "https://www.jetlifefashion.com/uploads/49e9b03b/61604ce9_thumb.jpeg",
-   "images": [],
-   "createdAt": "2022-08-01T07:11:46Z",
-   "top": false,
-   "isNew": false,
-   "recent": false
-  },
-  {
-   "id": 3249,
-   "name": "STUSSY T-SHIRT",
-   "price": 88,
-   "currency": "$",
-   "imageCount": 29,
-   "cover": "https://www.jetlifefashion.com/uploads/579445f0/c5752dad_thumb.jpeg",
-   "images": [],
-   "createdAt": "2022-08-01T07:08:48Z",
-   "top": false,
    "isNew": false,
    "recent": false
   },
@@ -3281,6 +3255,32 @@
    "cover": "https://www.jetlifefashion.com/uploads/d6ff7213/ef5b98ae_thumb.jpeg",
    "images": [],
    "createdAt": "2022-07-31T11:46:39Z",
+   "top": false,
+   "isNew": false,
+   "recent": false
+  },
+  {
+   "id": 2940,
+   "name": "PLAY BOY T-SHIRT",
+   "price": 98,
+   "currency": "$",
+   "imageCount": 24,
+   "cover": "https://www.jetlifefashion.com/uploads/1606e89b/752d8186_thumb.jpeg",
+   "images": [],
+   "createdAt": "2022-07-31T11:43:36Z",
+   "top": false,
+   "isNew": false,
+   "recent": false
+  },
+  {
+   "id": 2939,
+   "name": "PLAY BOY T-SHIRT",
+   "price": 98,
+   "currency": "$",
+   "imageCount": 26,
+   "cover": "https://www.jetlifefashion.com/uploads/1606e89b/2fcb7571_thumb.jpeg",
+   "images": [],
+   "createdAt": "2022-07-31T11:38:51Z",
    "top": false,
    "isNew": false,
    "recent": false
