@@ -1,6 +1,6 @@
 {
  "meta": {
-  "updatedAt": "2026-11-05T13:39:08.468Z",
+  "updatedAt": "2026-11-06T13:23:04.265Z",
   "supplier": "JetLife Fashion — 0832CLUB",
   "source": "https://www.jetlifefashion.com",
   "total": 240,
@@ -1195,7 +1195,7 @@
   {
    "id": 40520,
    "name": "RALPH LAUREN DOWN JACKET",
-   "price": 299,
+   "price": 588,
    "currency": "$",
    "imageCount": 35,
    "cover": "https://www.jetlifefashion.com/uploads/a03bf866/bd8a0906_thumb.jpeg",
@@ -1462,6 +1462,32 @@
    "images": [],
    "createdAt": "2022-10-26T06:45:36Z",
    "top": true,
+   "isNew": false,
+   "recent": false
+  },
+  {
+   "id": 3247,
+   "name": "STUSSY T-SHIRT",
+   "price": 68,
+   "currency": "$",
+   "imageCount": 29,
+   "cover": "https://www.jetlifefashion.com/uploads/579445f0/d4dbf7f2_thumb.jpeg",
+   "images": [],
+   "createdAt": "2022-08-01T07:03:13Z",
+   "top": false,
+   "isNew": false,
+   "recent": false
+  },
+  {
+   "id": 3246,
+   "name": "STUSSY T-SHIRT",
+   "price": 68,
+   "currency": "$",
+   "imageCount": 21,
+   "cover": "https://www.jetlifefashion.com/uploads/579445f0/f2fbedb4_thumb.jpeg",
+   "images": [],
+   "createdAt": "2022-08-01T07:00:47Z",
+   "top": false,
    "isNew": false,
    "recent": false
   },
@@ -3255,32 +3281,6 @@
    "cover": "https://www.jetlifefashion.com/uploads/4986348a/c5aae755_thumb.jpeg",
    "images": [],
    "createdAt": "2022-07-31T11:30:37Z",
-   "top": false,
-   "isNew": false,
-   "recent": false
-  },
-  {
-   "id": 2936,
-   "name": "PLAY BOY T-SHIRT",
-   "price": 98,
-   "currency": "$",
-   "imageCount": 12,
-   "cover": "https://www.jetlifefashion.com/uploads/1606e89b/346ad628_thumb.jpeg",
-   "images": [],
-   "createdAt": "2022-07-31T11:20:12Z",
-   "top": false,
-   "isNew": false,
-   "recent": false
-  },
-  {
-   "id": 2932,
-   "name": "STUSSY T-SHIRT",
-   "price": 68,
-   "currency": "$",
-   "imageCount": 28,
-   "cover": "https://www.jetlifefashion.com/uploads/579445f0/e70195e9_thumb.jpg",
-   "images": [],
-   "createdAt": "2022-07-31T11:15:57Z",
    "top": false,
    "isNew": false,
    "recent": false
